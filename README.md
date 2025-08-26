@@ -1,5 +1,3 @@
-<img src="./frontend/public/assets/project_blue_banner.png" alt="Project Blue Banner" width="600" height="250" style="object-fit: cover;">
-
 # Project Blue 🌐
 *A living portfolio and collaboration hub for software projects.*  
 
