@@ -35,10 +35,9 @@ function ContactPage() {
       email: "mr.joezhou@gmail.com",
       linkedin: "https://www.linkedin.com/in/xing-yu-joe-zhou-27814124b/",
       github: "https://github.com/JoeZhou1234",
-      avatar: null, // You can add an avatar image later
+      avatar: null, // Avatar image (Default is Initials)
       skills: ["React", "Node.js", "PostgreSQL", "JavaScript", "Python", "Git"]
     }
-    // Add more contributors here as the project grows
   ];
 
   return (
