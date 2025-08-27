@@ -1,0 +1,146 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.2rem;
+  gap: 12px;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.nav-title {
+  color: #2c3e50;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #4285f4;
+  background-color: #f8f9fa;
+}
+
+.nav-link.active {
+  color: #4285f4;
+  background-color: #e3f2fd;
+  font-weight: 600;
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  color: #495057;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logout-btn-nav {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn-nav:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.auth-placeholder {
+  width: 100px; /* Reserve space for auth buttons */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 15px;
+    height: 60px;
+  }
+  
+  .nav-menu {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .nav-title {
+    font-size: 1rem;
+  }
+  
+  .nav-logo {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .user-name {
+    display: none; /* Hide username on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    gap: 8px;
+  }
+  
+  .nav-link {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
