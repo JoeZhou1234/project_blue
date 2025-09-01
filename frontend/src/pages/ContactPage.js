@@ -37,6 +37,17 @@ function ContactPage() {
       github: "https://github.com/JoeZhou1234",
       avatar: null, // Avatar image (Default is Initials)
       skills: ["React", "Node.js", "PostgreSQL", "JavaScript", "Python", "Git"]
+    },
+    {
+      id: 2,
+      name: "Morgan Zhou",
+      role: "Co-Founder & Developer",
+      bio: "Software developer with expertise in full-stack development.",
+      email: "maogenzhou@gmail.com",
+      linkedin: "https://www.linkedin.com/in/morgan-zhou-47798a17/",
+      github: "https://github.com/morganzhou73",
+      avatar: null,
+      skills: ["Java", "Angular", "React", "MySQL", "PostgreSQL", "Git"]
     }
   ];
 
