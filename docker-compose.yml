@@ -1,0 +1,74 @@
+version: "3.7"
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+      - ./vhost:/etc/nginx/vhost.d
+      - ./html:/usr/share/nginx/html
+  nginx-proxy-acme:
+    image: nginxproxy/acme-companion
+    container_name: nginx-proxy-acme
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+      - ./vhost:/etc/nginx/vhost.d
+      - ./html:/usr/share/nginx/html
+      - ./acme:/etc/acme.sh
+    environment:
+      - DEFAULT_EMAIL=mr.joezhou@gmail.com
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+
+  postgres:
+    image: postgres:15
+    container_name: project-blue-postgres
+    restart: always
+    env_file:
+      - backend/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: ghcr.io/joezhou1234/backend-project-blue
+    container_name: project-blue-backend
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - backend/.env
+    expose:
+      - 4000
+    environment:
+      - FRONTEND_DOMAIN=https://joezhou.me
+      - BACKEND_URL=https://api.joezhou.me
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - VIRTUAL_HOST=api.joezhou.me
+      - LETSENCRYPT_HOST=api.joezhou.me
+
+  frontend:
+    image: ghcr.io/joezhou1234/frontend-project-blue
+    container_name: project-blue-frontend
+    restart: always
+    expose:
+      - 80
+    environment:
+      - VIRTUAL_HOST=joezhou.me
+      - LETSENCRYPT_HOST=joezhou.me
+
+volumes:
+  postgres_data:
