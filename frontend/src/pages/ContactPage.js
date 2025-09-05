@@ -19,13 +19,20 @@ function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log("Form submitted:", formData);
+    
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    
+    // Future: Implement backend integration for form submission
+    // For now, provide user feedback
     alert("Thank you for your message! I'll get back to you soon.");
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
-//   will need to be put in DB
+  // Future: Move contributors data to database
   const contributors = [
     {
       id: 1,

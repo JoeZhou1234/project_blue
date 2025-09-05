@@ -11,7 +11,7 @@ function ProjectsPage() {
       technologies: ["React", "Node.js", "PostgreSQL", "Express", "OAuth"],
       status: "Active",
       githubUrl: "https://github.com/JoeZhou1234/project_blue",
-      liveUrl: "http://localhost:3000",
+      liveUrl: "https://joezhou.me",
       image: "/assets/project_blue_banner.png"
     },
     {

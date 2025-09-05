@@ -2,9 +2,8 @@ import React from "react";
 import "./UpcomingPage.css";
 
 function UpcomingPage() {
-    // will need to be stored in DB
-    // status badges are : { "In Development": 10-99, "Planning": 5-9, "Research": 0-4 }
-    // progress is as a percentage out of 100
+  // Future: Move project data to database
+  // Status badge mapping: "In Development" (10-99%), "Planning" (5-9%), "Research" (0-4%)
   const upcomingProjects = [
     {
       id: 1,
@@ -26,7 +25,7 @@ function UpcomingPage() {
     },
   ];
 
-//   will need to be stored in DB
+  // Future: Move news data to database
   const newsUpdates = [
     {
       id: 1,
@@ -134,7 +133,7 @@ function UpcomingPage() {
           <span className="icon">🗺️</span>
           Development Roadmap
         </h2>
-        {/* will need to be stored in DB */}
+        {/* Future: Move roadmap data to database */}
         <div className="roadmap">
           <div className="roadmap-item">
             <div className="roadmap-quarter">Q1 2025</div>

@@ -57,6 +57,8 @@ services:
       - BACKEND_URL=https://api.joezhou.me
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
+      - NODE_ENV=production
+      - GOOGLE_CALLBACK_URL=https://api.joezhou.me/auth/google/callback
       - VIRTUAL_HOST=api.joezhou.me
       - LETSENCRYPT_HOST=api.joezhou.me
 
@@ -67,6 +69,7 @@ services:
     expose:
       - 80
     environment:
+      - REACT_APP_API_URL=https://api.joezhou.me
       - VIRTUAL_HOST=joezhou.me
       - LETSENCRYPT_HOST=joezhou.me
 

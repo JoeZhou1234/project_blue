@@ -11,9 +11,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# OAuth credentials
-google.json.nogit
-
 # Logs
 logs
 *.log
