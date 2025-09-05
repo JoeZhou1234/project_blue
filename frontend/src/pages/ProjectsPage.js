@@ -2,6 +2,12 @@ import React from "react";
 import "./ProjectsPage.css";
 
 function ProjectsPage() {
+  // Get the current environment's base URL
+  const getBaseUrl = () => {
+    if (process.env.NODE_ENV === 'production') return "https://joezhou.me";
+    return "http://localhost:3000";
+  };
+
   // Sample projects data - you can replace this with real data later
   const projects = [
     {
@@ -11,7 +17,7 @@ function ProjectsPage() {
       technologies: ["React", "Node.js", "PostgreSQL", "Express", "OAuth"],
       status: "Active",
       githubUrl: "https://github.com/JoeZhou1234/project_blue",
-      liveUrl: "https://joezhou.me",
+      liveUrl: getBaseUrl(),
       image: "/assets/project_blue_banner.png"
     },
     {

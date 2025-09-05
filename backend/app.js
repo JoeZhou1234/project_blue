@@ -51,10 +51,6 @@ app.use(passport.session());
 passport.serializeUser(function (user, done) { done(null, JSON.stringify(user)); });
 passport.deserializeUser(function (user, done) { done(null, JSON.parse(user)); });
 
-/**
- * Google OAuth Configuration
- * Uses environment variables for both development and production
- */
 const GoogleCredentials = {
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
