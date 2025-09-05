@@ -5,7 +5,6 @@ import { requireAuth } from "../middleware/auth.js";
 export const usersRouter = Router();
 
 usersRouter.get("/signout", function (req, res, next) {
-  // Allow signout even if not authenticated (for an idempotent operation)
   if (!req.user) return res.json({ message: "Already signed out" });
   
   req.logout(function (err) {
