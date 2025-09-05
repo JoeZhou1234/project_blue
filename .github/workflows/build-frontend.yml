@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --build-arg REACT_APP_API_URL=https://api.joezhou.me
 
       - name: Log into GitHub Container Registry
         run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin

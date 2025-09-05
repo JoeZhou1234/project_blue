@@ -63,13 +63,12 @@ services:
       - LETSENCRYPT_HOST=api.joezhou.me
 
   frontend:
-    image: ghcr.io/joezhou1234/frontend-project-blue
+    image: ghcr.io/joezhou1234/frontend-project-blue:latest
     container_name: project-blue-frontend
-    restart: always
+    restart: unless-stopped
     expose:
       - 80
     environment:
-      - REACT_APP_API_URL=https://api.joezhou.me
       - VIRTUAL_HOST=joezhou.me
       - LETSENCRYPT_HOST=joezhou.me
 
